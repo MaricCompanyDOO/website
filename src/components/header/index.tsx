@@ -1,16 +1,45 @@
 import * as React from "react"
-import { StickyHeader, StickyHeaderItem, StickyHeaderRowContainer } from "./header.style";
+import { graphql, useStaticQuery } from "gatsby"
+import { LogoWrapper, StickyHeader, StickyHeaderItem, StickyHeaderRowContainer, StyledLogo } from "./header.style";
+import { SECTIONS } from "../../utils/content";
 
-const Header: React.FC<{}> = () => (
-  <StickyHeader>
-    <div />
-    <StickyHeaderRowContainer gridGap={32}>
-      <StickyHeaderItem>o nama</StickyHeaderItem>
-      <StickyHeaderItem>zašto izabrati nas?</StickyHeaderItem>
-      <StickyHeaderItem>galerija</StickyHeaderItem>
-      <StickyHeaderItem>kontakt</StickyHeaderItem>
-    </StickyHeaderRowContainer>
-  </StickyHeader>
-)
+interface IHeaderProps {
+  activeRoute: number | null;
+  onRouteClick: (index: number) => void;
+}
 
-export default Header
+const Header: React.FC<IHeaderProps> = ({
+  activeRoute,
+  onRouteClick,
+}) => {
+  const data = useStaticQuery(graphql`
+    query logoImageApply {
+      file(relativePath: { eq: "logo.jpeg" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED, width: 3080, height: 931)
+        }
+      }
+    }
+  `);
+
+  return (
+    <StickyHeader>
+      <LogoWrapper>
+        <StyledLogo backgroundImage={data?.file?.childImageSharp?.gatsbyImageData?.images?.fallback?.src} />
+      </LogoWrapper>
+      <StickyHeaderRowContainer>
+        {SECTIONS.map((section, i) => (
+          <StickyHeaderItem
+            key={`${section}${i}`}
+            isActive={activeRoute === i}
+            onClick={() => onRouteClick(i)}
+          >
+            {section}
+          </StickyHeaderItem>
+        ))}
+      </StickyHeaderRowContainer>
+    </StickyHeader>
+  )
+}
+
+export default Header;

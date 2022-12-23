@@ -9,8 +9,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faInstagram,
+  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import { ContactInformation, HighlightedValue } from "src/types/highlighted-values";
+
+export const SECTIONS: string[] = [
+  "o nama",
+  "zašto izabrati nas?",
+  "galerija",
+  "kontakt",
+];
 
 export const HIGHLIGHTED_VALUES: HighlightedValue[] = [
   {
@@ -50,18 +58,22 @@ export const CONTACT_INFORMATIONS: ContactInformation[] = [
   },
   {
     icon: faPhone,
-    text: "065 521 157",
+    text: "065 521 156",
   },
-  // {
-  //   icon: faInstagram,
-  //   text: "@maric.company",
-  // },
+  {
+    icon: faInstagram,
+    text: "@maric.company",
+  },
+  {
+    icon: faFacebook,
+    text: "Maric Company",
+  },
   {
     icon: faEnvelope,
     text: "maric.kompany3@gmail.com",
   },
   {
     icon: faClock,
-    text: "09 - 17h",
+    text: "07 - 17h",
   },
 ];

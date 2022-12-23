@@ -1,6 +1,6 @@
-import * as React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { AboutImage, AboutImageMobile, AboutInnerWrapper, AboutRightRow, AboutSectionCheckContainer, AboutSectionCheckItem, AboutSectionSubheading, AboutWrapper } from "./about.style"
 import { ABOUT_PARAGRAPHS } from "../../utils/content";

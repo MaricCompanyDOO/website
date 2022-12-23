@@ -9,4 +9,5 @@ export type HighlightedValue = {
 export type ContactInformation = {
   icon: any;
   text: string;
+  link?: string;
 };
