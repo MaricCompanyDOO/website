@@ -8,7 +8,7 @@ import HighlightedValues from "../sections/highlighted-values";
 import ExpertiesSection from "../sections/experties";
 import ProductsSection from "../sections/products";
 
-const ContactSection = React.lazy(() => import('../sections/contact'));
+const ContactSection = typeof window !== "undefined" ? React.lazy(() => import('../sections/contact')) : null;
 
 const IndexPage: React.FC<PageProps> = () => (
   <Layout>
@@ -18,7 +18,9 @@ const IndexPage: React.FC<PageProps> = () => (
     <AboutSection />
     <ExpertiesSection />
     <ProductsSection />
-    <ContactSection />
+    {ContactSection !== null ? (
+      <ContactSection />
+    ) : <div />}
   </Layout>
 )
 
