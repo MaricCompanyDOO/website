@@ -3,9 +3,9 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Maric Company d.o.o`,
-    description: ``,
+    description: `Naša djelatnost je proizvodnja visokokvalitetnih drvnih sortimenta (rezane građe).`,
     author: `Maric Company d.o.o`,
-    siteUrl: `https://github.com/MaricCompanyDOO`
+    siteUrl: `https://maric-company.netlify.app/`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

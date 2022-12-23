@@ -1,19 +1,19 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { MapContainer, TileLayer, Marker } from "react-leaflet";
-// import L from 'leaflet';
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import L from 'leaflet';
 import { ContactInnerWrapper, ContactItem, ContactItemWrapper, ContactWrapper, InfoText, InfoWrapper, MapWrapper } from "./contact.style";
-// import 'leaflet/dist/leaflet.css';
+import 'leaflet/dist/leaflet.css';
 import { SectionSubheading } from "../..//style/global-style";
 import { theme } from "../../style/theme";
 import { CONTACT_INFORMATIONS } from "../../utils/content";
 
-// const createIcon = (url: string) => {
-//   return new L.Icon({
-//     iconUrl: url,
-//   });
-// };
+const createIcon = (url: string) => {
+  return new L.Icon({
+    iconUrl: url,
+  });
+};
 
 const ContactSection: React.FC<{}> = () => {
   const data = useStaticQuery(graphql`
@@ -30,7 +30,7 @@ const ContactSection: React.FC<{}> = () => {
     <ContactWrapper backgroundImage={data?.file?.childImageSharp?.gatsbyImageData?.images?.fallback?.src}>
       <ContactInnerWrapper>
         <MapWrapper>
-          {/* <MapContainer
+          <MapContainer
             center={[44.490069807511944, 17.378451898547944]}
             zoom={17}
             scrollWheelZoom={false}
@@ -44,7 +44,7 @@ const ContactSection: React.FC<{}> = () => {
               position={[44.490069807511944, 17.378451898547944]}
               icon={createIcon("https://icons.veryicon.com/48/System/Small%20%26%20Flat/map%20marker.png")}>
             </Marker>
-          </MapContainer> */}
+          </MapContainer>
         </MapWrapper>
 
         <InfoWrapper>
