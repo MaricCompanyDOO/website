@@ -7,7 +7,8 @@ import AboutSection from "../sections/about";
 import HighlightedValues from "../sections/highlighted-values";
 import ExpertiesSection from "../sections/experties";
 import ProductsSection from "../sections/products";
-import ContactSection from "../sections/contact";
+
+const ContactSection = React.lazy(() => import('../sections/contact'));
 
 const IndexPage: React.FC<PageProps> = () => (
   <Layout>
