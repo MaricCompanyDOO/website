@@ -52,10 +52,10 @@ export const CONTACT_INFORMATIONS: ContactInformation[] = [
     icon: faPhone,
     text: "065 521 157",
   },
-  {
-    icon: faInstagram,
-    text: "@maric.company",
-  },
+  // {
+  //   icon: faInstagram,
+  //   text: "@maric.company",
+  // },
   {
     icon: faEnvelope,
     text: "maric.kompany3@gmail.com",
