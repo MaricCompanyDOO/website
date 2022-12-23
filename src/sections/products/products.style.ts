@@ -1,11 +1,16 @@
 import { ColumnContainer, RowContainer } from "../../style/global-style";
 import styled from "styled-components";
+import breakpoints from "../../utils/breakpoints";
 
 export const ProductsContainer = styled(ColumnContainer)`
   width: 100%;
   padding-top: 24px;
   padding-bottom: 24px;
   background: ${({ theme }) => theme.colors.white()};
+
+  @media (max-width: ${breakpoints.tablet_l}px) {
+    align-items: flex-start;
+  }
 `;
 
 export const ProductsGrid = styled.div`
@@ -13,6 +18,20 @@ export const ProductsGrid = styled.div`
   grid-template-columns: auto auto auto auto;
   grid-gap: 16px;
   padding: 24px;
+
+  @media (max-width: ${breakpoints.desktop_s}px) {
+    grid-template-columns: auto auto auto;
+  }
+
+  @media (max-width: ${breakpoints.tablet_l}px) {
+    grid-template-columns: auto auto;
+  }
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ProductsHeaddingWrapper = styled(ColumnContainer)`
@@ -37,6 +56,21 @@ export const ProductItem = styled.div`
 
 export const ProductsGridrapper = styled(ColumnContainer)`
   align-items: flex-start;
+  grid-column: span 2;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    display: none;
+  }
+`;
+
+export const ProductsGridrapperMobile = styled(ColumnContainer)`
+  align-items: flex-start;
+  grid-column: span 1;
+  display: none;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    display: flex;
+  }
 `;
 
 export const ProductImage = styled.div<{ backgroundImage: string }>`

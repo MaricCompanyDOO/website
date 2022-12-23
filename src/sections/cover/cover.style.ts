@@ -1,5 +1,6 @@
-import { ColumnContainer, RowContainer } from "../../style/global-style";
+import { ColumnContainer } from "../../style/global-style";
 import styled from "styled-components";
+import breakpoints from "../../utils/breakpoints";
 
 export const CoverContainer = styled.div`
   display: flex;
@@ -17,6 +18,10 @@ export const BackgroundContainer = styled(ColumnContainer)<{ backgroundImage: st
   box-shadow: inset 0 0 0 2000px ${({ theme }) => theme.colors.black(0.4)};
   background-attachment: fixed;
   justify-content: flex-start;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    height: 100vh;
+  }
 `;
 
 export const BackgroundInnerContainer = styled(ColumnContainer)`
@@ -36,12 +41,20 @@ export const Title = styled(ColumnContainer)`
   font-size: 48px;
   text-align: center;
   font-family: Impact, fantasy;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    font-size: 32px;
+  }
 `;
 
 export const Subtitle = styled(ColumnContainer)`
   color:  ${({ theme }) => theme.colors.white()};
   font-size: 18px;
   text-align: center;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    font-size: 14px;
+  }
 `;
 
 export const OurMissionWrapper = styled(ColumnContainer)`

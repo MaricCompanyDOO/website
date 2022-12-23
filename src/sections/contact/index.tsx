@@ -1,9 +1,9 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { TileLayer, Marker } from "react-leaflet";
 import L from 'leaflet';
-import { ContactInnerWrapper, ContactItem, ContactItemWrapper, ContactWrapper, InfoText, InfoWrapper, MapWrapper } from "./contact.style";
+import { ContactInnerWrapper, ContactItem, ContactItemWrapper, ContactWrapper, InfoText, InfoWrapper, MapWrapper, StyledMapContainer } from "./contact.style";
 import 'leaflet/dist/leaflet.css';
 import { SectionSubheading } from "../..//style/global-style";
 import { theme } from "../../style/theme";
@@ -30,11 +30,10 @@ const ContactSection: React.FC<{}> = () => {
     <ContactWrapper backgroundImage={data?.file?.childImageSharp?.gatsbyImageData?.images?.fallback?.src}>
       <ContactInnerWrapper>
         <MapWrapper>
-          <MapContainer
+          <StyledMapContainer
             center={[44.490069807511944, 17.378451898547944]}
             zoom={17}
             scrollWheelZoom={false}
-            style={{ height: "100%", width: "100%" }}
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -44,7 +43,7 @@ const ContactSection: React.FC<{}> = () => {
               position={[44.490069807511944, 17.378451898547944]}
               icon={createIcon("https://icons.veryicon.com/48/System/Small%20%26%20Flat/map%20marker.png")}>
             </Marker>
-          </MapContainer>
+          </StyledMapContainer>
         </MapWrapper>
 
         <InfoWrapper>

@@ -1,5 +1,6 @@
 import { ColumnContainer, RowContainer } from "../../style/global-style";
 import styled from "styled-components";
+import breakpoints from "../../utils/breakpoints";
 
 export const ExpertiesRelativeContainer = styled.div`
   position: relative;
@@ -38,6 +39,10 @@ export const FixedHeading = styled.div`
   font-size: 46px;
   font-family: cursive;
   text-align: center;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    font-size: 32px;
+  }
 `;
 
 export const FixedSubheading = styled(FixedHeading)`
@@ -58,6 +63,11 @@ export const GridItemTopLeft = styled(ColumnContainer)`
   width: 250px;
   text-align: right;
   padding-bottom: 16px;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    max-width: 100px;
+    width: 100px;
+  }
 `;
 
 export const GridItemTopRight = styled(ColumnContainer)`
@@ -67,6 +77,11 @@ export const GridItemTopRight = styled(ColumnContainer)`
   width: 250px;
   text-align: left;
   padding-bottom: 16px;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    max-width: 100px;
+    width: 100px;
+  }
 `;
 
 export const GridItemBottomLeft = styled(ColumnContainer)`
@@ -76,6 +91,11 @@ export const GridItemBottomLeft = styled(ColumnContainer)`
   width: 250px;
   text-align: right;
   padding-top: 16px;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    max-width: 100px;
+    width: 100px;
+  }
 `;
 
 export const GridItemBottomRight = styled(ColumnContainer)`
@@ -85,12 +105,22 @@ export const GridItemBottomRight = styled(ColumnContainer)`
   width: 250px;
   text-align: left;
   padding-top: 16px;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    max-width: 100px;
+    width: 100px;
+  }
 `;
 
 
 export const GridItemHeading = styled.div`
   color: ${({ theme }) => theme.colors.white()};
   font-size: 28px;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    font-size: 22px;
+    overflow-wrap: break-word;
+  }
 `;
 
 export const GridItemSeparatorVertical = styled.div`

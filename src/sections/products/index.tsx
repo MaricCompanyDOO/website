@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { theme } from "../../style/theme";
-import { ProductImage, ProductItem, ProductItemsWrapper, ProductItemWrapper, ProductsContainer, ProductsGrid, ProductsGridrapper, ProductsHeaddingWrapper } from "./products.style";
+import { ProductImage, ProductItem, ProductItemsWrapper, ProductItemWrapper, ProductsContainer, ProductsGrid, ProductsGridrapper, ProductsGridrapperMobile, ProductsHeaddingWrapper } from "./products.style";
 import SectionHeading from "../../components/section-heading";
 import { RowContainer, SectionSubheading } from "../../style/global-style";
 import { extractLoadedImage } from "../../utils/helper";
@@ -100,8 +100,26 @@ const ProductsSection: React.FC<{}> = () => {
   return (
     <ProductsContainer>
         <ProductsGrid>
+          <ProductsGridrapperMobile gridGap={24}>
+            <SectionHeading title="galerija" />
+            <SectionSubheading>
+              Naši proizvodi su<br />po Vašoj mjeri!
+            </SectionSubheading>
+            <ProductItemsWrapper gridGap={4}>
+              {[...productListLeft, ...productListMiddle, ...productListRight].map((product, i) => (
+                <ProductItemWrapper key={`${product}${i}`}>
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    color={theme.colors.orange()}
+                    fontSize={16}
+                    style={{ marginTop: 4 }}
+                  />
+                  <ProductItem>{product}</ProductItem>
+                </ProductItemWrapper>
+              ))}
+            </ProductItemsWrapper>
+          </ProductsGridrapperMobile>
           <ProductsGridrapper
-            style={{ gridColumn: "span 2" }}
             gridGap={24}
           >
             <SectionHeading title="galerija" />

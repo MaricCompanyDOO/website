@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { AboutImage, AboutInnerWrapper, AboutRightRow, AboutSectionCheckContainer, AboutSectionCheckItem, AboutSectionSubheading, AboutWrapper } from "./about.style"
+import { AboutImage, AboutImageMobile, AboutInnerWrapper, AboutRightRow, AboutSectionCheckContainer, AboutSectionCheckItem, AboutSectionSubheading, AboutWrapper } from "./about.style"
 import { ABOUT_PARAGRAPHS } from "../../utils/content";
 import { theme } from "../../style/theme";
 import SectionHeading from "../../components/section-heading";
@@ -30,6 +30,7 @@ const AboutSection: React.FC<{}> = () => {
           <SectionSubheading>
             Mi smo firma koja najveći deo pažnje daje kvalitetu
           </SectionSubheading>
+          <AboutImageMobile backgroundImage={data?.file?.childImageSharp?.gatsbyImageData?.images?.fallback?.src} />
           <AboutSectionSubheading>
             Marić Company d.o.o. je firma osnovana 2005. godine. Od tada pa sve do danas, kvalitet proizvoda nam je ostao iznad svega.
           </AboutSectionSubheading>
