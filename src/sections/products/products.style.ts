@@ -30,7 +30,10 @@ export const ProductsGrid = styled.div`
   @media (max-width: ${breakpoints.mobile_l}px) {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding: 0px;
+    width: calc(100% - 2 * 16px);
+    margin-left: 16px;
   }
 `;
 
@@ -43,6 +46,10 @@ export const ProductItemsWrapper = styled(ColumnContainer)`
   align-items: flex-start;
   justify-content: flex-start;
   width: 160px;
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    width: 300px;
+  }
 `;
 
 export const ProductItemWrapper = styled(RowContainer)`
@@ -80,4 +87,8 @@ export const ProductImage = styled.div<{ backgroundImage: string }>`
   background-position: center;
   background-repeat: no-repeat;
   background-image: url( ${({ backgroundImage }) => backgroundImage});
+
+  @media (max-width: ${breakpoints.mobile_l}px) {
+    width: 100%;
+  }
 `;

@@ -1,6 +1,7 @@
 import { ColumnContainer } from "../../style/global-style";
 import styled from "styled-components";
 import breakpoints from "../../utils/breakpoints";
+import { isTouchDevice } from "../../utils/helper";
 
 export const CoverContainer = styled.div`
   display: flex;
@@ -16,11 +17,12 @@ export const BackgroundContainer = styled(ColumnContainer)<{ backgroundImage: st
   background-repeat: no-repeat;
   background-image: url( ${({ backgroundImage }) => backgroundImage});
   box-shadow: inset 0 0 0 2000px ${({ theme }) => theme.colors.black(0.4)};
-  background-attachment: fixed;
+  background-attachment: ${isTouchDevice ? "scroll" : "fixed"};
   justify-content: flex-start;
 
   @media (max-width: ${breakpoints.mobile_l}px) {
     height: 100vh;
+    background-position: center;
   }
 `;
 
