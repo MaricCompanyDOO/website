@@ -20,9 +20,12 @@ export const BackgroundContainer = styled(ColumnContainer)<{ backgroundImage: st
   background-attachment: ${isTouchDevice ? "scroll" : "fixed"};
   justify-content: flex-start;
 
+  @media (max-width: ${breakpoints.tablet_m}px) {
+    background-attachment: scroll;
+  }
+
   @media (max-width: ${breakpoints.mobile_l}px) {
     height: 100vh;
-    background-position: center;
   }
 `;
 
