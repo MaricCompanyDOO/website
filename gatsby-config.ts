@@ -5,7 +5,7 @@ const config: GatsbyConfig = {
     title: `Maric Company d.o.o`,
     description: ``,
     author: `Maric Company d.o.o`,
-    // siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://github.com/MaricCompanyDOO`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
