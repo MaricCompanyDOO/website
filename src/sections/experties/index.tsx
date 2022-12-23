@@ -20,7 +20,7 @@ const ExpertiesSection: React.FC<{}> = () => {
   return (
     <ExpertiesRelativeContainer>
       <ExpertiesContainer>
-        <BackgroundContainer backgroundImage={data.file.childImageSharp.gatsbyImageData.images.fallback.src}>
+        <BackgroundContainer backgroundImage={data?.file?.childImageSharp?.gatsbyImageData?.images?.fallback?.src}>
         <BackgroundFixedContainer gridGap={4}>
           <FixedSubheading>
             Tu smo da ispunimo<br />sve Vaše kriterijume!

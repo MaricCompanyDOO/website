@@ -27,7 +27,7 @@ const ContactSection: React.FC<{}> = () => {
   `);
 
   return (
-    <ContactWrapper backgroundImage={data.file.childImageSharp.gatsbyImageData.images.fallback.src}>
+    <ContactWrapper backgroundImage={data?.file?.childImageSharp?.gatsbyImageData?.images?.fallback?.src}>
       <ContactInnerWrapper>
         <MapWrapper>
           <MapContainer

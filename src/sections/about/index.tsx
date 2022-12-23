@@ -23,7 +23,7 @@ const AboutSection: React.FC<{}> = () => {
   return (
     <AboutWrapper>
       <AboutInnerWrapper gridGap={32}>
-        <AboutImage backgroundImage={data.file.childImageSharp.gatsbyImageData.images.fallback.src} />
+        <AboutImage backgroundImage={data?.file?.childImageSharp?.gatsbyImageData?.images?.fallback?.src} />
       
         <AboutRightRow>
           <SectionHeading title="O nama" />

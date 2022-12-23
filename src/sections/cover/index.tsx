@@ -16,7 +16,7 @@ const CoverSection: React.FC<{}> = () => {
 
   return (
     <CoverContainer>
-      <BackgroundContainer backgroundImage={data.file.childImageSharp.gatsbyImageData.images.fallback.src}>
+      <BackgroundContainer backgroundImage={data?.file?.childImageSharp?.gatsbyImageData?.images?.fallback?.src}>
         <BackgroundInnerContainer>
           <Title>Marić Company d.o.o</Title>
           
