@@ -1,0 +1,8 @@
+@font-face {
+    font-display: swap;
+    font-family: "Moderat-Regular";
+    font-weight: 500;
+    src: local("Moderat-Regular"), local("Moderat-Regular"),
+      url("../fonts/Moderat-Extended-Regular.woff2") format("woff2");
+  }
+  

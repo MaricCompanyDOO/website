@@ -1,5 +1,11 @@
 import type { GatsbyConfig } from "gatsby";
 
+const path = require("path");
+
+require("dotenv").config({
+  path: `.env`,
+});
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Maric Company d.o.o`,
@@ -9,14 +15,21 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-netlify",
+    "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, "src", "images"),
+      },
     },
-    __key: "images"
-  }]
+  ]
 };
 
 export default config;
