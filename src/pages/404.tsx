@@ -1,9 +1,14 @@
 import * as React from "react"
 import { HeadFC, PageProps } from "gatsby"
+import NotFoundSection from "../sections/not-found"
+import Layout from "../components/layout"
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <div />
+    <Layout>
+      <NotFoundSection />
+    </Layout>
+
   )
 }
 

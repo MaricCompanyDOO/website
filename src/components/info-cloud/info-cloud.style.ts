@@ -17,7 +17,7 @@ export const InfoCloudInnerContainer = styled(ColumnContainer)`
 `;
 
 export const InfoCloudHeading = styled.div`
-  color: ${({ theme }) => theme.colors.darkBlue()};
+  color: ${({ theme }) => theme.colors.darkGreen()};
   font-family: American Typewriter, serif;
   font-weight: 700;
   font-size: 32px;

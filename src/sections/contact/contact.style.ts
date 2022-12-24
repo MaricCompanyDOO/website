@@ -1,9 +1,8 @@
-import { MapContainer } from "react-leaflet";
 import { ColumnContainer, RowContainer } from "../../style/global-style";
 import styled from "styled-components";
 import breakpoints from "../../utils/breakpoints";
 
-export const ContactWrapper = styled(ColumnContainer)<{ backgroundImage: string }>`
+export const ContactWrapper = styled(ColumnContainer)`
   height: calc(100vh - 84px - 75px);
   padding-top: 42px;
   padding-bottom: 42px;
@@ -36,16 +35,6 @@ export const ContactInnerWrapper = styled(RowContainer)`
   }
 `;
 
-export const StyledMapContainer = styled(MapContainer)`
-  height: 100%;
-  width: 100%;
-
-  @media (max-width: ${breakpoints.tablet_m}px) {
-    height: 100vh;
-    width: 100%;
-  }
-`;
-
 export const MapWrapper = styled(ColumnContainer)`
   height: 100%;
   width: 50%;
@@ -54,6 +43,17 @@ export const MapWrapper = styled(ColumnContainer)`
   @media (max-width: ${breakpoints.tablet_m}px) {
     width: 100%;
   }
+`;
+
+export const MapFallback = styled.div<{ backgroundImage: string }>`
+  height: 100%;
+  width: 100%;
+  min-height: 500px;
+  background:  ${({ theme }) => theme.colors.lightGray()};
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-image: url( ${({ backgroundImage }) => backgroundImage});
 `;
 
 export const InfoWrapper = styled(ColumnContainer)`

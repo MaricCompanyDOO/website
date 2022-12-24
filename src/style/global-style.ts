@@ -16,7 +16,7 @@ export const ColumnContainer = styled.div<{ gridGap?: number }>`
 `;
 
 export const SectionSubheading = styled.div<{ color?: string }>`
-  color: ${({ theme, color }) => color ?? theme.colors.darkBlue()};
+  color: ${({ theme, color }) => color ?? theme.colors.darkGreen()};
   font-size: 42px;
   font-family: Impact, fantasy;
 `;

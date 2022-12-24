@@ -9,8 +9,7 @@ import HighlightedValues from "../sections/highlighted-values";
 import ExpertiesSection from "../sections/experties";
 import ProductsSection from "../sections/products";
 import useOnScreen from "../hooks/useOnScreen";
-
-const ContactSection = typeof window !== "undefined" ? React.lazy(() => import('../sections/contact')) : null;
+import ContactSection from "../sections/contact";
 
 const IndexPage: React.FC<PageProps> = () => {
   const aboutScrollRef = React.useRef<HTMLDivElement>(null);
@@ -79,11 +78,9 @@ const IndexPage: React.FC<PageProps> = () => {
         <ProductsSection />
       </div>
       
-      {ContactSection !== null ? (
-        <div ref={contactScrollRef}>
-          <ContactSection />
-        </div>
-      ) : <div />}
+      <div ref={contactScrollRef}>
+        <ContactSection />
+      </div>
     </Layout>
   );
 }

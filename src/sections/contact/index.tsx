@@ -1,49 +1,33 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { TileLayer, Marker } from "react-leaflet";
-import L from 'leaflet';
-import { ContactInnerWrapper, ContactItem, ContactItemWrapper, ContactWrapper, InfoText, InfoWrapper, MapWrapper, StyledMapContainer } from "./contact.style";
-import 'leaflet/dist/leaflet.css';
+import { ContactInnerWrapper, ContactItem, ContactItemWrapper, ContactWrapper, InfoText, InfoWrapper, MapFallback, MapWrapper } from "./contact.style";
 import { SectionSubheading } from "../..//style/global-style";
 import { theme } from "../../style/theme";
 import { CONTACT_INFORMATIONS } from "../../utils/content";
 
-const createIcon = (url: string) => {
-  return new L.Icon({
-    iconUrl: url,
-  });
-};
+const Map = typeof window !== "undefined" ? React.lazy(() => import('../../components/map')) : null;
 
 const ContactSection: React.FC<{}> = () => {
   const data = useStaticQuery(graphql`
     query cntactImageApply {
-      file(relativePath: { eq: "product_11.jpg" }) {
+      file(relativePath: { eq: "map-screenshot.png" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 716, height: 533)
+          gatsbyImageData(layout: FIXED, width: 1202, height: 1348)
         }
       }
     }
   `);
 
   return (
-    <ContactWrapper backgroundImage={data?.file?.childImageSharp?.gatsbyImageData?.images?.fallback?.src}>
+    <ContactWrapper>
       <ContactInnerWrapper>
         <MapWrapper>
-          <StyledMapContainer
-            center={[44.490069807511944, 17.378451898547944]}
-            zoom={17}
-            scrollWheelZoom={false}
-          >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker
-              position={[44.490069807511944, 17.378451898547944]}
-              icon={createIcon("https://icons.veryicon.com/48/System/Small%20%26%20Flat/map%20marker.png")}>
-            </Marker>
-          </StyledMapContainer>
+          {!!Map ? (
+            <Map />
+          ) : (
+            <MapFallback backgroundImage={data?.file?.childImageSharp?.gatsbyImageData?.images?.fallback?.src} />
+          )}
         </MapWrapper>
 
         <InfoWrapper>

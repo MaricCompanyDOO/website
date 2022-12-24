@@ -10,7 +10,7 @@ export const StickyHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background: ${({ theme }) => theme.colors.darkBlue()};
+  background: ${({ theme }) => theme.colors.darkGreen()};
   height: 75px;
   z-index: 2;
   overflow: visible;
