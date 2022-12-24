@@ -10,6 +10,7 @@ import ExpertiesSection from "../sections/experties";
 import ProductsSection from "../sections/products";
 import useOnScreen from "../hooks/useOnScreen";
 import ContactSection from "../sections/contact";
+import Loader from "../components/loader";
 
 const IndexPage: React.FC<PageProps> = () => {
   const aboutScrollRef = React.useRef<HTMLDivElement>(null);
@@ -45,7 +46,7 @@ const IndexPage: React.FC<PageProps> = () => {
     allRefs[index]?.current?.scrollIntoView({ block: "start", behavior: "smooth" });
   }
 
-  return typeof window !== "undefined" ? (
+  return (
     <Layout>
       <Seo
         title="Marić Company d.o.o"
@@ -63,26 +64,32 @@ const IndexPage: React.FC<PageProps> = () => {
           ],
         }}
       />
-      <Header activeRoute={activeSection} onRouteClick={headerNavHandler} />
-      <div ref={aboutScrollRef}>
-       <CoverSection />
-       <HighlightedValues />
-       <AboutSection />
-      </div>
+      {typeof window !== "undefined" ? (
+        <>
+          <Header activeRoute={activeSection} onRouteClick={headerNavHandler} />
+          <div ref={aboutScrollRef}>
+          <CoverSection />
+          <HighlightedValues />
+          <AboutSection />
+          </div>
 
-      <div ref={expertiesScrollRef}>
-        <ExpertiesSection />
-      </div>
-      
-      <div ref={productsScrollRef}>
-        <ProductsSection />
-      </div>
-      
-      <div ref={contactScrollRef}>
-        <ContactSection />
-      </div>
+          <div ref={expertiesScrollRef}>
+            <ExpertiesSection />
+          </div>
+          
+          <div ref={productsScrollRef}>
+            <ProductsSection />
+          </div>
+          
+          <div ref={contactScrollRef}>
+            <ContactSection />
+          </div>
+        </>
+      ) : (
+       <Loader />
+      )}
     </Layout>
-  ) : null;
+  );
 }
 
 export default IndexPage
