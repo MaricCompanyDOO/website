@@ -45,7 +45,7 @@ const IndexPage: React.FC<PageProps> = () => {
     allRefs[index]?.current?.scrollIntoView({ block: "start", behavior: "smooth" });
   }
 
-  return (
+  return typeof window !== "undefined" ? (
     <Layout>
       <Seo
         title="Marić Company d.o.o"
@@ -82,7 +82,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <ContactSection />
       </div>
     </Layout>
-  );
+  ) : null;
 }
 
 export default IndexPage
