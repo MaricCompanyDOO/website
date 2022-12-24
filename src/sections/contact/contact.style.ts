@@ -66,12 +66,20 @@ export const InfoText = styled.div`
   color: ${({ theme }) => theme.colors.white()};
 `;
 
-export const ContactItemWrapper = styled(RowContainer)`
+export const ContactItemWrapper = styled(RowContainer)<{ clickable?: boolean }>`
   max-width: 320px;
+
+  &:hover {
+    ${({ clickable }) => clickable && "cursor: pointer;"};
+  }
 `;
 
-export const ContactItem = styled.div`
+export const ContactItem = styled.div<{ clickable?: boolean }>`
   font-size: 18px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.white()};
+
+  &:hover {
+    ${({ clickable }) => clickable && "text-decoration: underline;"};
+  }
 `;

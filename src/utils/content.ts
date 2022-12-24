@@ -63,10 +63,12 @@ export const CONTACT_INFORMATIONS: ContactInformation[] = [
   {
     icon: faInstagram,
     text: "@maric.company",
+    link: "https://www.instagram.com/maric.company/",
   },
   {
     icon: faFacebook,
     text: "Maric Company",
+    link: "https://www.facebook.com/profile.php?id=100063733950526&mibextid=ZbWKwL",
   },
   {
     icon: faEnvelope,

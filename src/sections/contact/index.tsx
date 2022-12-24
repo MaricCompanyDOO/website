@@ -55,14 +55,22 @@ const ContactSection: React.FC<{}> = () => {
           </InfoText>
 
           {CONTACT_INFORMATIONS.map((contact, i) => (
-            <ContactItemWrapper key={`${contact.text}${i}`}>
+            <ContactItemWrapper
+              key={`${contact.text}${i}`}
+              clickable={!!contact.link}
+              onClick={() => {
+                if (!!contact.link) {
+                  window?.open(contact.link, "_blank");
+                }
+              }}
+            >
               <FontAwesomeIcon
                 icon={contact.icon}
                 color={theme.colors.white()}
                 fontSize={18}
                 style={{ marginTop: 4 }}
               />
-              <ContactItem>
+              <ContactItem clickable={!!contact.link}>
                 {contact.text}
               </ContactItem>
             </ContactItemWrapper>

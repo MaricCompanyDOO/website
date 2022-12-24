@@ -3,11 +3,12 @@ import { HeadFC, PageProps } from "gatsby"
 import Layout from "../components/layout/index";
 import CoverSection from "../sections/cover";
 import Header from "../components/header";
+import Seo from "../components/seo";
 import AboutSection from "../sections/about";
 import HighlightedValues from "../sections/highlighted-values";
 import ExpertiesSection from "../sections/experties";
 import ProductsSection from "../sections/products";
-import useOnScreen from "..//hooks/useOnScreen";
+import useOnScreen from "../hooks/useOnScreen";
 
 const ContactSection = typeof window !== "undefined" ? React.lazy(() => import('../sections/contact')) : null;
 
@@ -39,8 +40,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const activeSections = allVisibilities
     .map((element, i) => element ? i : null)
     .filter((e) => e !== null);
-  const activeSection = activeSections.reverse()[0] ?? null;
-  console.log({allVisibilities})
+  const activeSection = activeSections.reverse()[0] ?? 0;
 
   const headerNavHandler = (index: number): void => {
     allRefs[index]?.current?.scrollIntoView({ block: "start", behavior: "smooth" });
@@ -48,8 +48,23 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <Layout>
+      <Seo
+        title="Marić Company d.o.o"
+        description="Naša djelatnost je proizvodnja visokokvalitetnih drvnih sortimenta (rezane građe)."
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Corporation",
+          "name": "Marić Company d.o.o",
+          "description" : "Naša djelatnost je proizvodnja visokokvalitetnih drvnih sortimenta (rezane građe).",
+          "url": `https://maric-company.netlify.app/`,
+          "logo": "../images/logo.jpeg",
+          "sameAs": [
+            "https://www.instagram.com/maric.company/",
+            "https://www.facebook.com/profile.php?id=100063733950526&mibextid=ZbWKwL",
+          ],
+        }}
+      />
       <Header activeRoute={activeSection} onRouteClick={headerNavHandler} />
-
       <div ref={aboutScrollRef}>
        <CoverSection />
        <HighlightedValues />
