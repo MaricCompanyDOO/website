@@ -11,3 +11,8 @@ export type ContactInformation = {
   text: string;
   link?: string;
 };
+
+export type ContactLink = {
+  icon: any;
+  link: string;
+};

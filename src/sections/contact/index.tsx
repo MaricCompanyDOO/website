@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ContactInnerWrapper, ContactItem, ContactItemWrapper, ContactWrapper, InfoText, InfoWrapper, MapFallback, MapWrapper } from "./contact.style";
-import { SectionSubheading } from "../..//style/global-style";
+import { RowContainer, SectionSubheading } from "../..//style/global-style";
 import { theme } from "../../style/theme";
 import { CONTACT_INFORMATIONS } from "../../utils/content";
 
@@ -59,6 +59,9 @@ const ContactSection: React.FC<{}> = () => {
               </ContactItem>
             </ContactItemWrapper>
           ))}
+
+         
+          
         </InfoWrapper>
       </ContactInnerWrapper>
     </ContactWrapper>

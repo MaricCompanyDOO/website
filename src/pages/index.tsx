@@ -50,7 +50,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <Layout>
       <Seo
         title="Marić Company d.o.o"
-        description="Naša djelatnost je proizvodnja visokokvalitetnih drvnih sortimenta (rezane građe)."
+        description="Marić Company d.o.o • Pilana Imljani Kneževo • Rezana građa"
         schemaMarkup={{
           "@context": "https://schema.org",
           "@type": "Corporation",

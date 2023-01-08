@@ -55,10 +55,12 @@ export const CONTACT_INFORMATIONS: ContactInformation[] = [
   {
     icon: faPhone,
     text: "065 169 194",
+    link: "tel:+38765169194",
   },
   {
     icon: faPhone,
     text: "065 521 156",
+    link: "tel:+38765521156",
   },
   {
     icon: faInstagram,
@@ -73,6 +75,7 @@ export const CONTACT_INFORMATIONS: ContactInformation[] = [
   {
     icon: faEnvelope,
     text: "maric.kompany3@gmail.com",
+    link: "mailto:maric.kompany3@gmail.com",
   },
   {
     icon: faClock,
